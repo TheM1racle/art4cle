@@ -1,9 +1,85 @@
-@import 'tailwindcss';
+/* ===== ПОДВАЛ ПРИЖАТ К НИЗУ ===== */
+body {
+    margin: 0;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    background: #f3efe6;        /* цвет бумаги под всё тело */
+    font-family: Arial, sans-serif;
+}
 
-@source '../../vendor/laravel/framework/src/Illuminate/Pagination/resources/views/*.blade.php';
-@source '../../storage/framework/views/*.php';
+main {
+    flex: 1;                    /* растягивается, толкает footer вниз */
+    max-width: 720px;           /* лента не размазывается на весь экран */
+    width: 100%;
+    margin: 0 auto;             /* центрирует колонку */
+    padding: 24px 16px;
+}
 
-@theme {
-    --font-sans: 'Instrument Sans', ui-sans-serif, system-ui, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji',
-        'Segoe UI Symbol', 'Noto Color Emoji';
+/* ===== ШАПКА: тёмная полоса, всё в одну строку ===== */
+header {
+    background: #26221b;
+    padding: 12px 24px;
+    display: flex;              /* дети в одну строку */
+    align-items: center;        /* по центру по вертикали */
+    gap: 24px;                  /* расстояние между лого и меню */
+}
+
+header nav {
+    display: flex;              /* ссылки меню тоже в строку */
+    align-items: center;
+    gap: 16px;
+    justify-content: center;
+    flex: 1;
+}
+
+header a {
+    color: #e8e0d0;
+    text-decoration: none;
+}
+
+header a:hover { color: #d4a017; }
+
+
+.card {
+    background: #fff;
+    border-radius: 10px;
+    padding: 16px 20px;
+    margin-bottom: 16px;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, .08);
+}
+
+.card h2 {
+    margin-bottom: -15px;
+}
+.card-p-category {
+    font-size: 13px;
+}
+
+footer {
+    background: #26221b;
+    color: #8a8578;
+    padding: 20px 24px;
+    margin-top: auto;
+}
+
+.footer-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 720px;
+    margin: 0 auto;
+    gap: 20px;
+}
+
+.copyright {
+    font-size: 14px;
+    margin: 0;
+}
+
+.slogan {
+    font-size: 12px;
+    font-style: italic;
+    margin: 0;
+    color: #6b6558;
 }

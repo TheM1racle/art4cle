@@ -3,7 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\PageController;
 
-Route::get('/home', [PageController::class, 'home']);
+Route::get('/', [PageController::class, 'home']);
 
 Route::get('/category', [PageController::class, 'category']);
 

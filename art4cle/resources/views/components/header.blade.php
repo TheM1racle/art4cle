@@ -1,8 +1,8 @@
 <header>
     <nav>
-        <a href="/admin">Админка</a>
-        <a href="/journalist">Журналистика</a>
+        <a href="/">Главная</a>
         <a href="/category">Категории</a>
-        <a href="/home">Страница</a>
+        <a href="/journalist">Журналистика</a>
+        <a href="/admin">Админка</a>
     </nav>
 </header>

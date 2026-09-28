@@ -8,7 +8,12 @@ class PageController extends Controller
 {
     public function home()
     {
-        return view('home');
+        $articles = [
+            ['title' => 'Столичный Врач', 'category' => 'Люди', 'text' => 'Эпидемию можно лечить наукой'],
+            ['title' => 'Столичный Врач', 'category' => 'Люди', 'text' => 'Эпидемию можно лечить наукой'],
+            ['title' => 'Столичный Врач', 'category' => 'Люди', 'text' => 'Эпидемию можно лечить наукой']
+        ];
+        return view('home', ['articles' => $articles]);
     }
 
     public function admin()
