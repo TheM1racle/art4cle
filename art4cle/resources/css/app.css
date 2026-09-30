@@ -1,32 +1,32 @@
-/* ===== ПОДВАЛ ПРИЖАТ К НИЗУ ===== */
+
 body {
     margin: 0;
     min-height: 100vh;
     display: flex;
     flex-direction: column;
-    background: #f3efe6;        /* цвет бумаги под всё тело */
+    background: #f3efe6;
     font-family: Arial, sans-serif;
 }
 
 main {
-    flex: 1;                    /* растягивается, толкает footer вниз */
-    max-width: 720px;           /* лента не размазывается на весь экран */
+    flex: 1;
+    max-width: 720px;
     width: 100%;
-    margin: 0 auto;             /* центрирует колонку */
+    margin: 0 auto;
     padding: 24px 16px;
 }
 
-/* ===== ШАПКА: тёмная полоса, всё в одну строку ===== */
+
 header {
     background: #26221b;
     padding: 12px 24px;
-    display: flex;              /* дети в одну строку */
-    align-items: center;        /* по центру по вертикали */
-    gap: 24px;                  /* расстояние между лого и меню */
+    display: flex;
+    align-items: center;
+    gap: 24px;
 }
 
 header nav {
-    display: flex;              /* ссылки меню тоже в строку */
+    display: flex;
     align-items: center;
     gap: 16px;
     justify-content: center;
@@ -50,6 +50,7 @@ header a:hover { color: #d4a017; }
 }
 
 .card h2 {
+    margin-top: -5px;
     margin-bottom: -15px;
 }
 .card-p-category {
