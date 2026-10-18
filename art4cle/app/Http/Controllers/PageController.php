@@ -2,19 +2,27 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Article;
+use App\Models\Category;
 use Illuminate\Http\Request;
+
+
+
+
 
 class PageController extends Controller
 {
     public function home()
     {
-        $articles = [
-            ['title' => 'Исполнитель', 'category' => 'Закон', 'text' => '«Смерть — лучший лекарь. Никаких рецептов, никаких очередей, а главное — стопроцентный результат без рецидивов».'],
-            ['title' => 'О вечном', 'category' => 'Здравоохранение', 'text' => 'В Управе напомнили, что смерть — это не конец, а просто самый надежный способ сэкономить на суточном рационе».'],
-            ['title' => 'Отражение', 'category' => 'Трагик', 'text' => '«Ты так отчаянно ищешь смысл в наших словах, дурачок. Мы ведь просто эхо мыслей, которые ты побоялся додумать до конца».'],
-            ['title' => 'Хроника', 'category' => 'Хронология', 'text' => '«Здесь умирают не от язвы и не от ножа. Здесь просто устают искать причину просыпаться по утрам».']
-        ];
+        $articles = Article::with('category')->latest()->get();
         return view('home', ['articles' => $articles]);
+    }
+
+    public function category()
+    {
+        $category = Category::where('name', 'Хронология')->first();
+        $articles = $category->articles()->latest()->get();
+        return view('category', ['articles' => $articles]);
     }
 
     public function admin()
@@ -22,16 +30,6 @@ class PageController extends Controller
         return view('admin');
     }
 
-    public function category()
-    {
-        $articles = [
-            ['title' => 'Исполнитель', 'category' => 'Закон', 'text' => '«Смерть — лучший лекарь. Никаких рецептов, никаких очередей, а главное — стопроцентный результат без рецидивов».'],
-            ['title' => 'О вечном', 'category' => 'Здравоохранение', 'text' => 'В Управе напомнили, что смерть — это не конец, а просто самый надежный способ сэкономить на суточном рационе».'],
-            ['title' => 'Отражение', 'category' => 'Трагик', 'text' => '«Ты так отчаянно ищешь смысл в наших словах, дурачок. Мы ведь просто эхо мыслей, которые ты побоялся додумать до конца».'],
-            ['title' => 'Хроника', 'category' => 'Хронология', 'text' => '«Здесь умирают не от язвы и не от ножа. Здесь просто устают искать причину просыпаться по утрам».']
-        ];
-        return view('category', ['articles' => $articles]);
-    }
 
     public function journalist()
     {
