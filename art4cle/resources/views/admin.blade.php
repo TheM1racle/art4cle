@@ -27,7 +27,7 @@
                         <button class="btn-delete">Удал.</button>
                     </td>
                 </tr>
-                <!-- добавь ещё 2-3 строки -->
+
             </tbody>
         </table>
     </section>

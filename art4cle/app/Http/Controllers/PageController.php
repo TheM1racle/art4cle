@@ -33,6 +33,23 @@ class PageController extends Controller
 
     public function journalist()
     {
-        return view('journalist');
-    }
+        $categories = Category::all();
+        return view('journalist', ['categories' => $categories]);
+}
+
+    public function store(Request $request)
+    {
+
+        $data = $request->validate([
+            'title' => 'required|string|max:255',
+            'category_id' => 'required|exists:categories,id',
+            'text' => 'required|string',
+        ]);
+
+
+        Article::create($data);
+
+
+        return redirect('/');
+}
 }
