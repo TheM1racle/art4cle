@@ -86,7 +86,7 @@ footer {
 }
 
 
-/* ===== ФОРМА ЖУРНАЛИСТА ===== */
+
 .article-form {
     background: #fff;
     border-radius: 10px;
@@ -106,12 +106,12 @@ footer {
     color: #3a342a;
 }
 
-/* Общие стили для всех полей ввода */
+
 .article-form input[type="text"],
 .article-form select,
 .article-form textarea {
     width: 100%;
-    box-sizing: border-box;     /* чтобы padding не ломал ширину */
+    box-sizing: border-box;
     padding: 10px 12px;
     border: 1px solid #c9c2b2;
     border-radius: 6px;
@@ -125,16 +125,16 @@ footer {
 .article-form select:focus,
 .article-form textarea:focus {
     outline: none;
-    border-color: #d4a017;      /* золотистый акцент при фокусе */
+    border-color: #d4a017;
     background: #fff;
 }
 
 .article-form textarea {
-    resize: vertical;           /* можно растягивать только по вертикали */
+    resize: vertical;
     min-height: 140px;
 }
 
-/* Кнопка в стиле шапки */
+
 .btn-publish {
     background: #26221b;
     color: #e8e0d0;
@@ -152,7 +152,7 @@ footer {
 }
 
 
-/* ===== АДМИН-ПАНЕЛЬ ===== */
+
 .admin-section {
     background: #fff;
     border-radius: 10px;
@@ -204,4 +204,35 @@ footer {
 
 .role-form .field {
     margin-bottom: 14px;
+}
+
+
+.error-page {
+    text-align: center;
+    padding: 40px 20px;
+}
+
+.error-page h1 {
+    font-size: 96px;
+    margin: 0;
+    color: #d0021b;
+    letter-spacing: 6px;
+}
+
+.error-page h2 {
+    margin-top: 8px;
+    color: #3a342a;
+}
+
+.error-message {
+    color: #666;
+    margin-bottom: 20px;
+}
+
+.error-img {
+    max-width: 100%;
+    width: 480px;
+    border-radius: 10px;
+    margin: 20px 0;
+    box-shadow: 0 4px 14px rgba(0, 0, 0, .25);
 }
