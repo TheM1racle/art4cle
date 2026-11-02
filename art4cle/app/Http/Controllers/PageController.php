@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Article;
+use App\Models\Text;
 use App\Models\Category;
 use Illuminate\Http\Request;
 
@@ -14,15 +14,15 @@ class PageController extends Controller
 {
     public function home()
     {
-        $articles = Article::with('category')->latest()->get();
-        return view('home', ['articles' => $articles]);
+        $texts = Text::with(['category', 'author'])->latest()->get();
+        return view('home', ['texts' => $texts]);
     }
 
     public function category()
     {
         $category = Category::where('name', 'Хронология')->first();
-        $articles = $category->articles()->latest()->get();
-        return view('category', ['articles' => $articles]);
+        $texts = $category ? $category->texts()->latest()->get() : collect();
+        return view('category', ['texts' => $texts]);
     }
 
     public function admin()
@@ -39,17 +39,14 @@ class PageController extends Controller
 
     public function store(Request $request)
     {
-
         $data = $request->validate([
-            'title' => 'required|string|max:255',
+            'heading' => 'required|string|max:255',
             'category_id' => 'required|exists:categories,id',
             'text' => 'required|string',
         ]);
 
-
-        Article::create($data);
-
+        $request->user()->texts()->create($data);
 
         return redirect('/');
-}
+    }
 }

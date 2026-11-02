@@ -1,11 +1,12 @@
 @extends('layouts.app')
 @section('title', 'Категория')
 @section('content')
-    @foreach ($articles as $article)
+    <h1>Категория: Хронология</h1>
+    @foreach ($texts as $text)
         <article class="card">
-            <h2>{{ $article->title }}</h2>
-            <p class="card-p-category">{{ $article->category->name }}</p>
-            <p>{{ $article->text }}</p>
+            <h2>{{ $text->heading }}</h2>
+            <p class="card-p-category">{{ $text->category->name }}</p>
+            <p>{{ $text->text }}</p>
         </article>
     @endforeach
 @endsection

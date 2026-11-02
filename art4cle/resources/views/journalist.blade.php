@@ -9,8 +9,9 @@
     @csrf
 
     <div class="field">
-        <label for="title">Заголовок статьи</label>
-        <input type="text" id="title" name="title" required>
+    <label for="heading">Заголовок статьи</label>
+    <input type="text" id="heading" name="heading" value="{{ old('heading') }}" required>
+    @error('heading') <p style="color:red">{{ $message }}</p> @enderror
     </div>
 
     <div class="field">

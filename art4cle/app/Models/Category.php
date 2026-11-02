@@ -3,13 +3,13 @@
 namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Attributes\Fillable;
 
+#[Fillable(['name'])]
 class Category extends Model
 {
-    protected $fillable = ['name'];
-
-    public function articles()
+    public function texts()
     {
-        return $this->hasMany(Article::class);
+        return $this->hasMany(Text::class);
     }
 }
